@@ -223,12 +223,6 @@ CREATE TABLE COMPLIANCE_RECORD (
     FOREIGN KEY (FarmID) REFERENCES FARM(FarmID)
 );
 
-
-
-
-POPULATE TABLE WITH DATA
-
-
 --- Before inserting data into OWNER table
 SELECT * FROM OWNER;
 
@@ -580,12 +574,6 @@ SELECT OWNER.FName, OWNER.LName, FARM.FarmName, FARM.FSize
 FROM OWNER 
 JOIN FARM ON OWNER.OwnerID = FARM.OwnerID 
 WHERE FARM.FSize > 150;
-
-
-
-
-UPDATE AND DELETE
-
 
 -- Display the record before the update
 SELECT * FROM FARM WHERE FarmID = 1;
