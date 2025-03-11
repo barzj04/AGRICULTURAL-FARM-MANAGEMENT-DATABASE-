@@ -10,6 +10,7 @@ Welcome to the **Agricultural Farm Management Database**! 🚜🌱 This project 
 - [📂 Project Structure](#-project-structure)
 - [👥 Team Members](#-team-members)
 - [🎓 University Information](#-university-information)
+- [🤝 Contribution](#-contribution)
 - [📜 License](#-license)
 - [📧 Contact](#-contact)
 
@@ -27,6 +28,28 @@ The **Agricultural Farm Management Database System** is designed to support farm
 - 🗄️ **MySQL / SQLite** – Database management.
 - 🏛️ **JDBC** – Database connectivity.
 - 🎨 **Swing** – GUI development.
+
+### 📄 SQL Files
+This project includes SQL scripts for database setup and management:
+```sql
+-- Creating a table for crops
+CREATE TABLE Crops (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    type VARCHAR(100),
+    planted_date DATE,
+    harvested_date DATE
+);
+
+-- Creating a table for livestock
+CREATE TABLE Livestock (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    species VARCHAR(255) NOT NULL,
+    quantity INT NOT NULL,
+    farm_id INT,
+    FOREIGN KEY (farm_id) REFERENCES Farms(id)
+);
+```
 
 ## 📥 Installation & Usage
 ### 🔧 Prerequisites
@@ -63,6 +86,9 @@ AGRICULTURAL-FARM-MANAGEMENT-DATABASE/
 │   ├── Equipment.java  # 🔧 Manages farm equipment
 │   ├── FinancialRecord.java  # 💰 Tracks income and expenses
 │   ├── DatabaseHandler.java  # 🗄️ Handles database operations
+│── sql/
+│   ├── schema.sql  # 📜 Database schema
+│   ├── seed.sql  # 🌱 Sample data
 │── README.md  # 📖 Project documentation
 │── LICENSE  # 📜 License information
 ```
@@ -80,9 +106,12 @@ AGRICULTURAL-FARM-MANAGEMENT-DATABASE/
 ## 🎓 University Information
 - **University:** Universiti Teknologi PETRONAS  
 - **Program:** Bachelor of Computer Science (Hons)  
-- **Year/Semester:** 1st Year, 3rd Semester (July 2024)  
+- **Year/Semester:** 1st Year, 2nd Semester (July 2024)  
 - **Course:** TEB1103: Data and Information Management  
 - **Instructor:** Ts. Dr. Ahmad Sobri Hashim 🧑‍🏫  
+
+## 🤝 Contribution
+Want to improve this project? 🎉 Feel free to fork this repository, make changes, and submit a pull request. Contributions are always welcome!
 
 ## 📜 License
 This project is licensed under the MIT License. Check the [LICENSE](LICENSE) file for details.
